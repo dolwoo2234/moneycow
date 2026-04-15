@@ -3,85 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BREAD & FORTUNE</title>
-    <!-- Bootstrap CSS CDN -->
+    <title>BREAD & FORTUNE | 퀴즈 포털</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        .container {
-            max-width: 900px;
-        }
-        .hover-card {
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-        .hover-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-        }
-        .card {
-            border: none;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            padding: 2rem;
-            text-align: center;
-        }
-        .icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-        }
+        body { background-color: #f0f2f5; font-family: 'Apple SD Gothic Neo', sans-serif; }
+        .hover-card { transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; display: block; height: 100%; }
+        .hover-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; }
+        .card { border: none; border-radius: 20px; text-align: center; border-bottom: 5px solid transparent; }
+        .card.fortune { border-bottom-color: #28a745; }
+        .card.bread { border-bottom-color: #ffc107; }
+        .card.love { border-bottom-color: #e83e8c; }
+        .card.date { border-bottom-color: #6610f2; }
+        .card.test { border-bottom-color: #fd7e14; }
+        .card.kkon { border-bottom-color: #6c757d; }
+        .card.cat { border-bottom-color: #20c997; }
+        .icon { font-size: 3.5rem; padding-top: 1.5rem; }
+        .card-title { font-weight: 700; margin-top: 1rem; }
     </style>
 </head>
 <body>
-
-<div class="container py-5 text-center">
-    <header class="mb-5">
-        <h1 class="display-3 fw-bold text-dark mb-3">BREAD & FORTUNE</h1>
-        <p class="fs-4 text-muted">원하시는 서비스를 선택해주세요</p>
+<div class="container py-5">
+    <header class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary mb-2">BREAD & FORTUNE</h1>
+        <p class="fs-5 text-muted">매일 새로운 운세와 재미있는 심리테스트를 즐겨보세요!</p>
     </header>
 
-    <div class="row g-4 justify-content-center">
-        <!-- 오늘의 운세 카드 -->
-        <div class="col-md-6">
-            <a href="fortune.html" class="card h-100 hover-card">
-                <div class="card-body">
-                    <div class="icon">🍀</div>
-                    <h2 class="card-title fw-bold mb-3">오늘의 운세</h2>
-                    <p class="card-text text-muted fs-5 mb-4">당신의 오늘 하루 점수와 추천 메뉴를 확인해보세요!</p>
-                    <div class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">시작하기</div>
-                </div>
+    <div class="row g-4">
+        <!-- 1. 오늘의 운세 -->
+        <div class="col-md-4 col-lg-3">
+            <a href="fortune.html" class="card fortune hover-card shadow-sm">
+                <div class="icon">🍀</div>
+                <div class="card-body"><h5>오늘의 운세</h5><p class="small text-muted">운세와 메뉴 추천</p></div>
             </a>
         </div>
-
-        <!-- 빵 심리테스트 카드 -->
-        <div class="col-md-6">
-            <a href="quiz/index.html" class="card h-100 hover-card">
-                <div class="card-body">
-                    <div class="icon">🍞</div>
-                    <h2 class="card-title fw-bold mb-3">나는 어떤 빵일까?</h2>
-                    <p class="card-text text-muted fs-5 mb-4">재미있는 빵 심리테스트로 나의 MBTI 성향을 알아보세요.</p>
-                    <div class="btn btn-warning text-white btn-lg px-5 rounded-pill shadow-sm">시작하기</div>
-                </div>
+        <!-- 2. 빵 MBTI -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/bread/index.html" class="card bread hover-card shadow-sm">
+                <div class="icon">🍞</div>
+                <div class="card-body"><h5>나는 어떤 빵일까?</h5><p class="small text-muted">나의 성격 빵 매칭</p></div>
+            </a>
+        </div>
+        <!-- 3. 사랑의 언어 -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/love-language/index.html" class="card love hover-card shadow-sm">
+                <div class="icon">❤️</div>
+                <div class="card-body"><h5>사랑의 언어</h5><p class="small text-muted">나의 애정표현 방식</p></div>
+            </a>
+        </div>
+        <!-- 4. 데이트 스타일 -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/date-style/index.html" class="card date hover-card shadow-sm">
+                <div class="icon">👩‍❤️‍👨</div>
+                <div class="card-body"><h5>데이트 스타일</h5><p class="small text-muted">커플 성향 분석</p></div>
+            </a>
+        </div>
+        <!-- 5. 테스트 중독력 -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/test-addict/index.html" class="card test hover-card shadow-sm">
+                <div class="icon">🧪</div>
+                <div class="card-body"><h5>테스트 중독력</h5><p class="small text-muted">심테 레벨 테스트</p></div>
+            </a>
+        </div>
+        <!-- 6. 꼰대력 테스트 -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/kkondae/index.html" class="card kkon hover-card shadow-sm">
+                <div class="icon">☕</div>
+                <div class="card-body"><h5>꼰대력 지수</h5><p class="small text-muted">나의 꼰대 성향은?</p></div>
+            </a>
+        </div>
+        <!-- 7. 고양이 MBTI -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/cat/index.html" class="card cat hover-card shadow-sm">
+                <div class="icon">🐱</div>
+                <div class="card-body"><h5>고양이 MBTI</h5><p class="small text-muted">내가 고양이라면?</p></div>
+            </a>
+        </div>
+        <!-- 8. 디저트 MBTI -->
+        <div class="col-md-4 col-lg-3">
+            <a href="quizzes/dessert/index.html" class="card hover-card shadow-sm">
+                <div class="icon">🍰</div>
+                <div class="card-body"><h5>디저트 MBTI</h5><p class="small text-muted">달콤한 나의 본심</p></div>
             </a>
         </div>
     </div>
-
-    <footer class="mt-5 pt-5 text-muted">
-        <p>&copy; <span id="year"></span> All Rights Reserved.</p>
-    </footer>
 </div>
-
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
 </body>
 </html>
