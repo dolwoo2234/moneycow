@@ -1,124 +1,63 @@
 "use client";
 
-import { useState } from 'react';
-
-interface Fortune {
-  score: number;
-  message: string;
-  lunch: string;
-  dinner: string;
-}
+import Link from 'next/link';
 
 export default function Home() {
-  const [name, setName] = useState<string>('');
-  const [fortune, setFortune] = useState<Fortune | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('운세 확인 버튼 클릭됨, 이름:', name);
-    setLoading(true);
-    setFortune(null);
-    setError(null);
-
-    try {
-      console.log('API 호출 시작...');
-      const response = await fetch('/api/fortune', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name }),
-      });
-
-      console.log('API 응답 상태:', response.status);
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch fortune');
-      }
-
-      const data: Fortune = await response.json();
-      console.log('받은 운세 데이터:', data);
-      setFortune(data);
-    } catch (err) {
-      console.error('운세 호출 중 오류 발생:', err);
-      setError('운세를 불러오는 데 실패했습니다.');
-    } finally {
-      setLoading(false);
+  const apps = [
+    {
+      title: "오늘의 운세",
+      description: "당신의 오늘 하루 점수와 추천 메뉴를 확인해보세요!",
+      icon: "🍀",
+      href: "/fortune",
+      color: "bg-primary"
+    },
+    {
+      title: "나는 어떤 빵일까?",
+      description: "재미있는 빵 심리테스트로 나의 MBTI 성향을 알아보세요.",
+      icon: "🍞",
+      href: "/quiz/index.html",
+      color: "bg-warning"
     }
-  };
-
+  ];
 
   return (
     <main className="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
-      <div className="w-100 text-end mb-3" style={{ maxWidth: '600px' }}>
-        <a href="/quiz/index.html" className="btn btn-outline-secondary btn-sm shadow-sm">
-          🍞 나는 어떤 빵일까? 심리테스트 하러 가기
-        </a>
-      </div>
-      <h1 className="display-4 fw-bold text-primary mb-4">오늘의 운세</h1>
+      <header className="text-center mb-5">
+        <h1 className="display-3 fw-bold text-dark mb-3">BREAD & FORTUNE</h1>
+        <p className="fs-4 text-muted">원하시는 서비스를 선택해주세요</p>
+      </header>
 
-      <div className="card shadow-lg p-4 p-md-5 w-100" style={{ maxWidth: '600px' }}>
-        <div className="card-body">
-          <form onSubmit={handleSubmit} className="mb-4">
-            <div className="form-group mb-3">
-              <label htmlFor="nameInput" className="form-label fs-5">이름을 입력하세요:</label>
-              <input
-                type="text"
-                className="form-control form-control-lg"
-                id="nameInput"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="예: 홍길동"
-                required
-              />
-            </div>
-            <button type="submit" className="btn btn-primary btn-lg w-100" disabled={loading}>
-              {loading ? '운세 확인 중...' : '운세 확인하기'}
-            </button>
-          </form>
-
-          {error && (
-            <div className="alert alert-danger mt-4" role="alert">
-              {error}
-            </div>
-          )}
-
-          {fortune && (
-            <div className="mt-4 text-center">
-              <h2 className="fs-3 text-secondary mb-3">{name} 님의 오늘의 운세</h2>
-              
-              <div className="mb-4">
-                <p className="fs-1 fw-bold text-success mb-2">{fortune.score}점</p>
-                <p className="fs-5">{fortune.message}</p>
-              </div>
-
-              <div className="row mt-4">
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <div className="card h-100 bg-light border-primary">
-                    <div className="card-body">
-                      <h3 className="card-title fs-4 text-primary">점심 추천</h3>
-                      <p className="card-text fs-5">{fortune.lunch}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="card h-100 bg-light border-primary">
-                    <div className="card-body">
-                      <h3 className="card-title fs-4 text-primary">저녁 추천</h3>
-                      <p className="card-text fs-5">{fortune.dinner}</p>
-                    </div>
+      <div className="row g-4 w-100 justify-content-center" style={{ maxWidth: '900px' }}>
+        {apps.map((app, index) => (
+          <div key={index} className="col-md-6">
+            <Link href={app.href} style={{ textDecoration: 'none' }}>
+              <div className="card h-100 shadow-sm border-0 p-4 text-center hover-card transition-all" style={{ cursor: 'pointer', borderRadius: '20px' }}>
+                <div className="card-body">
+                  <div className="display-1 mb-4">{app.icon}</div>
+                  <h2 className="card-title fw-bold mb-3">{app.title}</h2>
+                  <p className="card-text text-muted fs-5 mb-4">{app.description}</p>
+                  <div className={`btn ${app.color} text-white btn-lg px-5 rounded-pill`}>
+                    시작하기
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
 
-      <footer className="mt-5 text-muted">
-        <p>&copy; {new Date().getFullYear()} 오늘의 운세. All rights reserved.</p>
+      <style jsx>{`
+        .hover-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+        }
+        .transition-all {
+          transition: all 0.3s ease;
+        }
+      `}</style>
+
+      <footer className="mt-5 pt-5 text-muted">
+        <p>&copy; {new Date().getFullYear()} All Rights Reserved.</p>
       </footer>
     </main>
   );
