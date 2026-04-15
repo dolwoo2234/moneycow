@@ -1,78 +1,20 @@
-
 const comfyuiAddress = "127.0.0.1:8188";
+
+// DOM Elements
 const generateBtn = document.getElementById("generate");
-const promptText = document.getElementById("prompt");
 const resultImage = document.getElementById("result-image");
-const resultContainer = document.getElementById("result-container");
+const workflowUpload = document.getElementById('workflow-upload');
+const dynamicControlsContainer = document.getElementById('dynamic-controls-container');
 
-// A simple text-to-image workflow
-const workflow = {
-  "3": {
-    "class_type": "KSampler",
-    "inputs": {
-      "seed": 156687112760228,
-      "steps": 20,
-      "cfg": 8,
-      "sampler_name": "euler",
-      "scheduler": "normal",
-      "denoise": 1,
-      "model": [ "4", 0 ],
-      "positive": [ "6", 0 ],
-      "negative": [ "7", 0 ],
-      "latent_image": [ "5", 0 ]
-    }
-  },
-  "4": {
-    "class_type": "CheckpointLoaderSimple",
-    "inputs": {
-      "ckpt_name": "v1-5-pruned-emaonly.safetensors"
-    }
-  },
-  "5": {
-    "class_type": "EmptyLatentImage",
-    "inputs": {
-      "width": 512,
-      "height": 512,
-      "batch_size": 1
-    }
-  },
-  "6": {
-    "class_type": "CLIPTextEncode",
-    "inputs": {
-      "text": "masterpiece, best quality, a beautiful landscape",
-      "clip": [ "4", 1 ]
-    }
-  },
-  "7": {
-    "class_type": "CLIPTextEncode",
-    "inputs": {
-      "text": "bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry",
-      "clip": [ "4", 1 ]
-    }
-  },
-  "8": {
-    "class_type": "VAEDecode",
-    "inputs": {
-      "samples": [ "3", 0 ],
-      "vae": [ "4", 2 ]
-    }
-  },
-  "9": {
-    "class_type": "SaveImage",
-    "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [ "8", 0 ]
-    }
-  }
-};
+// Global state
+let currentWorkflow = null;
 
+// --- Core API and WebSocket Logic (mostly unchanged) ---
 
 async function queuePrompt(promptWorkflow) {
   const res = await fetch(`http://${comfyuiAddress}/prompt`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt: promptWorkflow }),
   });
   return await res.json();
@@ -92,27 +34,92 @@ function setupWebSocket() {
       const imageInfo = data.data.output.images[0];
       const imageUrl = await getImage(imageInfo.filename, imageInfo.subfolder, imageInfo.type);
       resultImage.src = imageUrl;
+      resultImage.style.display = 'block';
       generateBtn.disabled = false;
       generateBtn.innerText = "Generate Image";
     }
   };
+   ws.onopen = () => {
+    console.log('WebSocket connection established.');
+  };
+  ws.onerror = (err) => {
+    console.error('WebSocket Error: ', err);
+  }
 }
 
-generateBtn.addEventListener("click", async () => {
-  const currentPrompt = promptText.value;
-  if (!currentPrompt) {
-    alert("Please enter a prompt!");
-    return;
-  }
-  
-  // Update the prompt in the workflow
-  workflow["6"].inputs.text = currentPrompt;
-  
-  generateBtn.disabled = true;
-  generateBtn.innerText = "Generating...";
-  
-  await queuePrompt(workflow);
+// --- Dynamic Workflow and UI Generation Logic ---
+
+function createDynamicControls(workflow) {
+    dynamicControlsContainer.innerHTML = ''; // Clear previous controls
+    Object.values(workflow).forEach(node => {
+        if (node.class_type === "CLIPTextEncode") {
+            const label = document.createElement('label');
+            // Heuristic to determine if it's a positive or negative prompt
+            const isPositive = JSON.stringify(node.inputs.text).toLowerCase().includes('masterpiece');
+            label.textContent = isPositive ? 'Positive Prompt:' : 'Negative Prompt:';
+
+            const textarea = document.createElement('textarea');
+            textarea.id = `node-${node._meta.title}-text`; // Use title if available, fallback needed
+            textarea.dataset.nodeId = Object.keys(workflow).find(key => workflow[key] === node); // Find the node's ID
+            textarea.dataset.inputName = 'text';
+            textarea.value = node.inputs.text;
+            
+            dynamicControlsContainer.appendChild(label);
+            dynamicControlsContainer.appendChild(textarea);
+        }
+         // Add more control creators here for other node types like KSampler (seed, steps, cfg), etc.
+    });
+}
+
+
+workflowUpload.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const workflow = JSON.parse(e.target.result);
+            currentWorkflow = workflow;
+            createDynamicControls(currentWorkflow);
+            generateBtn.style.display = 'block';
+        } catch (error) {
+            alert('Error parsing workflow file. Please make sure it is a valid JSON file from ComfyUI.');
+            console.error(error);
+        }
+    };
+    reader.readAsText(file);
 });
 
-// Setup WebSocket on page load
-setupWebSocket();
+generateBtn.addEventListener("click", async () => {
+  if (!currentWorkflow) {
+    alert("Please upload a workflow file first!");
+    return;
+  }
+
+  generateBtn.disabled = true;
+  generateBtn.innerText = "Generating...";
+  resultImage.style.display = 'none';
+
+  // Create a deep copy to avoid modifying the original loaded workflow
+  const workflowToQueue = JSON.parse(JSON.stringify(currentWorkflow));
+
+  // Update the workflow with values from the dynamic controls
+  const controls = dynamicControlsContainer.querySelectorAll('[data-node-id]');
+  controls.forEach(control => {
+      const { nodeId, inputName } = control.dataset;
+      if(workflowToQueue[nodeId]) {
+          workflowToQueue[nodeId].inputs[inputName] = control.value;
+      }
+  });
+  
+  await queuePrompt(workflowToQueue);
+});
+
+// --- Initial Setup ---
+function init() {
+    generateBtn.style.display = 'none'; // Hide button until workflow is loaded
+    setupWebSocket();
+}
+
+init();

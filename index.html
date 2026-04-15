@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ComfyUI Prompt Interface</title>
+  <title>Remote ComfyUI</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>ComfyUI Prompt Interface</h1>
+  <h1>Remote ComfyUI</h1>
   <div class="container">
-    <textarea id="prompt" placeholder="Enter your prompt here..."></textarea>
+    <div class="workflow-loader">
+      <p>Upload your ComfyUI Workflow API file:</p>
+      <input type="file" id="workflow-upload" accept=".json,application/json" />
+    </div>
+    <div id="dynamic-controls-container"></div>
     <button id="generate">Generate Image</button>
     <div id="result-container">
       <img id="result-image" src="" alt="Generated Image" />
