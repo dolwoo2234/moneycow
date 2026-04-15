@@ -52,6 +52,11 @@ export default function Home() {
 
   return (
     <main className="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+      <div className="w-100 text-end mb-3" style={{ maxWidth: '600px' }}>
+        <a href="/quiz/index.html" className="btn btn-outline-secondary btn-sm shadow-sm">
+          🍞 나는 어떤 빵일까? 심리테스트 하러 가기
+        </a>
+      </div>
       <h1 className="display-4 fw-bold text-primary mb-4">오늘의 운세</h1>
 
       <div className="card shadow-lg p-4 p-md-5 w-100" style={{ maxWidth: '600px' }}>
