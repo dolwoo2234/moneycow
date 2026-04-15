@@ -35,20 +35,22 @@
         .meal-card:hover {
             transform: translateY(-5px);
         }
-        .footer {
-            margin-top: 40px;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
         #resultArea {
             display: none;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
     </style>
 </head>
 <body>
 
+<a href="index.html" class="btn btn-outline-secondary rounded-pill back-btn shadow-sm">← 홈으로</a>
+
 <div class="container d-flex flex-column align-items-center">
-    <h1 class="display-4 fw-bold text-primary mb-5">오늘의 운세</h1>
+    <h1 class="display-4 fw-bold text-primary mb-5 mt-4">오늘의 운세</h1>
 
     <div class="card p-4 p-md-5 w-100">
         <div class="card-body">
@@ -60,7 +62,6 @@
                 <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm">운세 확인하기</button>
             </form>
 
-            <!-- 결과 표시 영역 -->
             <div id="resultArea" class="mt-5 text-center">
                 <hr class="mb-5">
                 <h2 class="fs-3 text-secondary mb-4"><span id="displayName" class="fw-bold text-dark"></span> 님의 오늘의 운세</h2>
@@ -87,17 +88,9 @@
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        <p>&copy; <span id="year"></span> 오늘의 운세. All rights reserved.</p>
-    </div>
 </div>
 
 <script>
-    // 1. 현재 연도 업데이트
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // 2. 해시 함수: 이름에 따라 일관된 결과를 내기 위함
     function hashCode(str) {
         let hash = 0;
         for (let i = 0; i < str.length; i++) {
@@ -108,7 +101,6 @@
         return Math.abs(hash);
     }
 
-    // 3. 의사 난수 생성기
     function pseudoRandom(seed) {
         let value = seed;
         return function() {
@@ -117,53 +109,27 @@
         };
     }
 
-    // 4. 운세 로직
-    const lunchOptions = [
-        "든든한 제육볶음", "시원한 김치찌개", "매콤한 떡볶이", "상큼한 샐러드 파스타", "따뜻한 칼국수",
-        "얼큰한 부대찌개", "고소한 비빔밥", "간단한 샌드위치", "새콤달콤 돈까스", "담백한 초밥"
-    ];
-    const dinnerOptions = [
-        "화려한 스테이크", "푸짐한 삼겹살", "건강한 연어 스테이크", "매콤한 아귀찜", "향긋한 파스타",
-        "전통 불고기", "해물찜", "중국집 코스 요리", "멕시칸 타코", "일식 오마카세"
-    ];
+    const lunchOptions = ["제육볶음", "김치찌개", "떡볶이", "샐러드 파스타", "칼국수", "부대찌개", "비빔밥", "샌드위치", "돈까스", "초밥"];
+    const dinnerOptions = ["스테이크", "삼겹살", "연어 스테이크", "아귀찜", "파스타", "불고기", "해물찜", "중국집 코스", "타코", "오마카세"];
 
     document.getElementById('fortuneForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        
         const name = document.getElementById('nameInput').value.trim();
         if (!name) return;
 
-        // 오늘 날짜 문자열 생성 (예: "2026-04-15")
         const today = new Date().toISOString().split('T')[0];
-        
-        // 이름과 날짜를 결합하여 해시 생성 -> 매일 결과가 달라짐
         const hash = hashCode(name + today);
         const random = pseudoRandom(hash);
 
         const score = Math.floor(random() * 101);
-        
-        let message = "";
-        if (score >= 90) message = "오늘은 모든 것이 당신의 뜻대로 흘러갈 거예요! 행운이 가득합니다.";
-        else if (score >= 70) message = "긍정적인 에너지가 가득한 하루! 작은 도전들이 좋은 결과로 이어질 거예요.";
-        else if (score >= 50) message = "평범하지만 안정적인 하루입니다. 주변을 잘 살피면 좋은 기회를 찾을 수 있어요.";
-        else if (score >= 30) message = "오늘은 조심스럽게 행동하는 것이 좋습니다. 작은 어려움이 있을 수 있어요.";
-        else message = "다소 운이 따르지 않는 하루가 될 수 있지만, 긍정적인 마음을 잃지 마세요!";
+        let message = score >= 90 ? "최고의 하루!" : score >= 70 ? "좋은 하루!" : score >= 50 ? "평범한 하루!" : score >= 30 ? "주의가 필요한 하루!" : "조심해야 하는 하루!";
 
-        const lunch = lunchOptions[Math.floor(random() * lunchOptions.length)];
-        const dinner = dinnerOptions[Math.floor(random() * dinnerOptions.length)];
-
-        // 결과 업데이트
         document.getElementById('displayName').textContent = name;
         document.getElementById('displayScore').textContent = score + "점";
         document.getElementById('displayMessage').textContent = message;
-        document.getElementById('displayLunch').textContent = lunch;
-        document.getElementById('displayDinner').textContent = dinner;
-
-        // 결과 영역 표시
+        document.getElementById('displayLunch').textContent = lunchOptions[Math.floor(random() * lunchOptions.length)];
+        document.getElementById('displayDinner').textContent = dinnerOptions[Math.floor(random() * dinnerOptions.length)];
         document.getElementById('resultArea').style.display = 'block';
-
-        // 부드러운 스크롤 효과
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
 </script>
 

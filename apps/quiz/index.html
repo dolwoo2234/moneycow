@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나는 어떤 빵일까?</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <a href="../index.html" class="back-btn">← 홈으로</a>
     <div class="container">
         <div id="start-page">
             <h1>나는 어떤 빵일까?</h1>
@@ -18,10 +32,7 @@
                 <div class="progress"></div>
             </div>
             <h2 id="question"></h2>
-            <div id="choices">
-                <button class="choice"></button>
-                <button class="choice"></button>
-            </div>
+            <div id="choices"></div>
         </div>
         <div id="result-page" class="hidden">
             <h2 id="result-title"></h2>
