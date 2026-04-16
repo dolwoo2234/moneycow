@@ -71,4 +71,25 @@ function showResult() {
     
     resultTitle.textContent = `${nameInput.value}님의 결과`;
     resultDesc.innerHTML = `<h3 class="mb-3 text-purple" style="color:#6610f2;">${resultTitleText}</h3><p class="fs-5">${desc}</p>`;
+
+    // Add image handling logic
+    const resultImgElement = document.getElementById('result-img');
+    let imageFileName = '';
+    if (resultTitleText === "활동적인 탐험가 커플") {
+        imageFileName = 'result_explorer.png';
+    } else if (resultTitleText === "완벽주의 힐링 커플") {
+        imageFileName = 'result_healer.png';
+    } else if (resultTitleText === "즉흥적인 열정 커플") {
+        imageFileName = 'result_passionate.png';
+    } else { // 아늑한 집콕 커플
+        imageFileName = 'result_homebody.png';
+    }
+
+    if (resultImgElement && imageFileName) {
+        resultImgElement.src = `assets/results/${imageFileName}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none';
+    }
 }

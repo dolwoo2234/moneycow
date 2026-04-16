@@ -25,22 +25,22 @@ const questions = [
 ];
 
 const results = {
-    ESTJ: { title: '정석의 아이스 아메리카노', desc: '군더더기 없는 깔끔함과 확실한 에너지! 당신은 계획적이고 추진력이 뛰어난 리더예요.' },
-    ESTP: { title: '톡 쏘는 청포도 에이드', desc: '어디서나 존재감 폭발! 당신은 활동적이고 적응력이 뛰어난 모험가 스타일이에요.' },
-    ESFJ: { title: '달콤한 바닐라 라떼', desc: '누구에게나 호불호 없는 친절함! 당신은 주변 사람들을 잘 챙기는 따뜻한 배려가 넘쳐요.' },
-    ESFP: { title: '화려한 딸기 파르페', desc: '인생은 축제! 당신은 밝고 긍정적인 에너지로 주변을 즐겁게 만드는 분위기 메이커예요.' },
-    ISTJ: { title: '깊고 진한 따뜻한 홍차', desc: '변함없는 성실함과 신뢰! 당신은 원칙을 지키며 맡은 바 책임을 다하는 단단한 사람이에요.' },
-    ISTP: { title: '쿨한 매력의 콜드브루', desc: '냉철한 판단력과 효율성! 당신은 필요한 말만 하는 담백하고 독립적인 스타일이에요.' },
-    ISFJ: { title: '부드러운 밀크티', desc: '조용히 주변을 살피는 수호자! 당신은 헌신적이고 세심하게 타인을 돕는 따뜻한 마음을 가졌어요.' },
-    ISFP: { title: '감성 가득한 녹차 라떼', desc: '예술적인 감각과 평화주의! 당신은 온화하고 현재의 행복을 소중히 여기는 낭만파예요.' },
-    ENTJ: { title: '파워풀한 에너지 드링크', desc: '거침없는 야망과 결단력! 당신은 목표를 위해 전략적으로 움직이는 카리스마 리더예요.' },
-    ENTP: { title: '기발한 민트초코 프라페', desc: '독창적인 아이디어 뱅크! 당신은 고정관념을 깨는 걸 즐기는 자유로운 사고의 소유자예요.' },
-    INTJ: { title: '치밀한 더치커피', desc: '지적인 통찰력과 완벽주의! 당신은 미래를 설계하고 분석하는 것을 즐기는 전략가예요.' },
-    INTP: { title: '알쏭달쏭한 아인슈페너', desc: '논리적이고 호기심 많은 철학자! 당신은 조용히 지적 세계를 탐험하는 지식인 스타일이에요.' },
-    ENFJ: { title: '희망찬 레몬차', desc: '긍정적인 영향력을 전파하는 멘토! 당신은 타인의 성장을 돕고 이끄는 데 보람을 느껴요.' },
-    ENFP: { title: '통통 튀는 패션후르츠 주스', desc: '무한한 상상력과 열정! 당신은 매일매일이 즐거운 호기심 가득한 자유로운 영혼이에요.' },
-    INFJ: { title: '신비로운 보랏빛 타로 밀크티', desc: '깊은 통찰력과 강한 직관! 당신은 타인의 마음을 꿰뚫어 보는 신비한 매력이 있어요.' },
-    INFP: { title: '몽글몽글 구름 스무디', desc: '순수한 감수성과 이상향! 당신은 자신만의 소중한 내면 세계를 간직한 낭만주의자예요.' }
+    ESTJ: { title: '정석의 아이스 아메리카노', desc: '군더더기 없는 깔끔함과 확실한 에너지! 당신은 계획적이고 추진력이 뛰어난 리더예요.', image: 'result_americano.png' },
+    ESTP: { title: '톡 쏘는 청포도 에이드', desc: '어디서나 존재감 폭발! 당신은 활동적이고 적응력이 뛰어난 모험가 스타일이에요.', image: 'result_grapeade.png' },
+    ESFJ: { title: '달콤한 바닐라 라떼', desc: '누구에게나 호불호 없는 친절함! 당신은 주변 사람들을 잘 챙기는 따뜻한 배려가 넘쳐요.', image: 'result_vanillalatte.png' },
+    ESFP: { title: '화려한 딸기 파르페', desc: '인생은 축제! 당신은 밝고 긍정적인 에너지로 주변을 즐겁게 만드는 분위기 메이커예요.', image: 'result_parfait.png' },
+    ISTJ: { title: '깊고 진한 따뜻한 홍차', desc: '변함없는 성실함과 신뢰! 당신은 원칙을 지키며 맡은 바 책임을 다하는 단단한 사람이에요.', image: 'result_hottea.png' },
+    ISTP: { title: '쿨한 매력의 콜드브루', desc: '냉철한 판단력과 효율성! 당신은 필요한 말만 하는 담백하고 독립적인 스타일이에요.', image: 'result_coldbrew.png' },
+    ISFJ: { title: '부드러운 밀크티', desc: '조용히 주변을 살피는 수호자! 당신은 헌신적이고 세심하게 타인을 돕는 따뜻한 마음을 가졌어요.', image: 'result_milktea.png' },
+    ISFP: { title: '감성 가득한 녹차 라떼', desc: '예술적인 감각과 평화주의! 당신은 온화하고 현재의 행복을 소중히 여기는 낭만파예요.', image: 'result_greentealatte.png' },
+    ENTJ: { title: '파워풀한 에너지 드링크', desc: '거침없는 야망과 결단력! 당신은 목표를 위해 전략적으로 움직이는 카리스마 리더예요.', image: 'result_energydrink.png' },
+    ENTP: { title: '기발한 민트초코 프라페', desc: '독창적인 아이디어 뱅크! 당신은 고정관념을 깨는 걸 즐기는 자유로운 사고의 소유자예요.', image: 'result_mintchocofrappe.png' },
+    INTJ: { title: '치밀한 더치커피', desc: '지적인 통찰력과 완벽주의! 당신은 미래를 설계하고 분석하는 것을 즐기는 전략가예요.', image: 'result_dutchcoffee.png' },
+    INTP: { title: '알쏭달쏭한 아인슈페너', desc: '논리적이고 호기심 많은 철학자! 당신은 조용히 지적 세계를 탐험하는 지식인 스타일이에요.', image: 'result_einspanner.png' },
+    ENFJ: { title: '희망찬 레몬차', desc: '긍정적인 영향력을 전파하는 멘토! 당신은 타인의 성장을 돕고 이끄는 데 보람을 느껴요.', image: 'result_lemontae.png' },
+    ENFP: { title: '통통 튀는 패션후르츠 주스', desc: '무한한 상상력과 열정! 당신은 매일매일이 즐거운 호기심 가득한 자유로운 영혼이에요.', image: 'result_passionfruitjuice.png' },
+    INFJ: { title: '신비로운 보랏빛 타로 밀크티', desc: '깊은 통찰력과 강한 직관! 당신은 타인의 마음을 꿰뚫어 보는 신비한 매력이 있어요.', image: 'result_taromilktea.png' },
+    INFP: { title: '몽글몽글 구름 스무디', desc: '순수한 감수성과 이상향! 당신은 자신만의 소중한 내면 세계를 간직한 낭만주의자예요.', image: 'result_cloudsmoothie.png' }
 };
 
 let currentQuestion = 0;
@@ -79,4 +79,13 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
+    // Add image handling logic
+    const resultImgElement = document.getElementById('result-img');
+    if (resultImgElement && result.image) {
+        resultImgElement.src = `assets/results/${result.image}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none'; // Hide if no image is available
+    }
 }

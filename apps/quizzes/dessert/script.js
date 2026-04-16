@@ -25,22 +25,22 @@ const questions = [
 ];
 
 const results = {
-    ESTJ: { title: '철두철미 초코 케이크', desc: '완벽한 층과 균형! 당신은 계획적이고 리더십이 넘치는 사람이에요.' },
-    ESTP: { title: '에너제틱 과일 타르트', desc: '톡톡 튀는 비주얼과 맛! 당신은 도전을 즐기는 활발한 사람이에요.' },
-    ESFJ: { title: '다정한 마카롱', desc: '달콤한 필링처럼 주변을 챙기는 따뜻한 배려의 소유자!' },
-    ESFP: { title: '화려한 파르페', desc: '어디서나 주인공! 당신은 즐거움을 선사하는 분위기 메이커예요.' },
-    ISTJ: { title: '전통의 애플파이', desc: '변함없는 정석의 맛! 당신은 성실하고 책임감이 강한 사람이에요.' },
-    ISTP: { title: '담백한 스콘', desc: '겉은 무심하지만 속은 깊은 매력! 당신은 혼자만의 시간을 소중히 해요.' },
-    ISFJ: { title: '부드러운 푸딩', desc: '몽글몽글 다정한 당신! 주변 사람들을 편안하게 해주는 능력이 있어요.' },
-    ISFP: { title: '감성적인 무스 케이크', desc: '부드러운 예술가 타입! 당신은 섬세한 감각의 소유자예요.' },
-    ENTJ: { title: '위풍당당 크림 브륄레', desc: '단단한 껍질 속 부드러움! 당신은 결단력 있는 리더예요.' },
-    ENTP: { title: '기발한 수플레', desc: '언제 부풀지 모르는 통통 튀는 창의성! 아이디어가 넘치는 당신!' },
-    INTJ: { title: '치밀한 초콜릿 트러플', desc: '작지만 깊고 진한 생각! 당신은 전략적이고 독립적이에요.' },
-    INTP: { title: '알쏭달쏭 까눌레', desc: '독특한 향과 식감! 당신은 지적 호기심이 많은 사색가예요.' },
-    ENFJ: { title: '따뜻한 브라우니', desc: '진한 초콜릿처럼 깊은 정! 당신은 사람들을 이끄는 따뜻한 마음을 가졌어요.' },
-    ENFP: { title: '상큼한 레몬 타르트', desc: '톡 쏘는 매력! 당신은 언제나 새로운 꿈을 꾸는 자유로운 영혼이에요.' },
-    INFJ: { title: '우아한 레드벨벳', desc: '고급스럽고 생각이 깊은 당신! 타인에게 영감을 주는 통찰력을 가졌어요.' },
-    INFP: { title: '꿈꾸는 솜사탕', desc: '몽환적이고 부드러운 당신! 자신만의 환상적인 세계를 가진 사람이에요.' }
+    ESTJ: { title: '철두철미 초코 케이크', desc: '완벽한 층과 균형! 당신은 계획적이고 리더십이 넘치는 사람이에요.', image: 'result_chococake.png' },
+    ESTP: { title: '에너제틱 과일 타르트', desc: '톡톡 튀는 비주얼과 맛! 당신은 도전을 즐기는 활발한 사람이에요.', image: 'result_fruittart.png' },
+    ESFJ: { title: '다정한 마카롱', desc: '달콤한 필링처럼 주변을 챙기는 따뜻한 배려의 소유자!', image: 'result_macaron.png' },
+    ESFP: { title: '화려한 파르페', desc: '어디서나 주인공! 당신은 즐거움을 선사하는 분위기 메이커예요.', image: 'result_parfait.png' },
+    ISTJ: { title: '전통의 애플파이', desc: '변함없는 정석의 맛! 당신은 성실하고 책임감이 강한 사람이에요.', image: 'result_applepie.png' },
+    ISTP: { title: '담백한 스콘', desc: '겉은 무심하지만 속은 깊은 매력! 당신은 혼자만의 시간을 소중히 해요.', image: 'result_scone.png' },
+    ISFJ: { title: '부드러운 푸딩', desc: '몽글몽글 다정한 당신! 주변 사람들을 편안하게 해주는 능력이 있어요.', image: 'result_pudding.png' },
+    ISFP: { title: '감성적인 무스 케이크', desc: '부드러운 예술가 타입! 당신은 섬세한 감각의 소유자예요.', image: 'result_moosecake.png' },
+    ENTJ: { title: '위풍당당 크림 브륄레', desc: '단단한 껍질 속 부드러움! 당신은 결단력 있는 리더예요.', image: 'result_cremebrulee.png' },
+    ENTP: { title: '기발한 수플레', desc: '언제 부풀지 모르는 통통 튀는 창의성! 아이디어가 넘치는 당신!', image: 'result_souffle.png' },
+    INTJ: { title: '치밀한 초콜릿 트러플', desc: '작지만 깊고 진한 생각! 당신은 전략적이고 독립적이에요.', image: 'result_truffle.png' },
+    INTP: { title: '알쏭달쏭 까눌레', desc: '독특한 향과 식감! 당신은 지적 호기심이 많은 사색가예요.', image: 'result_cannele.png' },
+    ENFJ: { title: '따뜻한 브라우니', desc: '진한 초콜릿처럼 깊은 정! 당신은 사람들을 이끄는 따뜻한 마음을 가졌어요.', image: 'result_brownie.png' },
+    ENFP: { title: '상큼한 레몬 타르트', desc: '톡 쏘는 매력! 당신은 언제나 새로운 꿈을 꾸는 자유로운 영혼이에요.', image: 'result_lemontart.png' },
+    INFJ: { title: '우아한 레드벨벳', desc: '고급스럽고 생각이 깊은 당신! 타인에게 영감을 주는 통찰력을 가졌어요.', image: 'result_redvelvet.png' },
+    INFP: { title: '꿈꾸는 솜사탕', desc: '몽환적이고 부드러운 당신! 자신만의 환상적인 세계를 가진 사람이에요.', image: 'result_cottonCandy.png' }
 };
 
 let currentQuestion = 0;
@@ -79,4 +79,13 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
+    // Add image handling logic
+    const resultImgElement = document.getElementById('result-img');
+    if (resultImgElement && result.image) {
+        resultImgElement.src = `assets/results/${result.image}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none'; // Hide if no image is available
+    }
 }

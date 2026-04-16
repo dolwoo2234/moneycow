@@ -71,4 +71,34 @@ function showResult() {
     
     resultTitle.textContent = `${nameInput.value}님의 결과`;
     resultDesc.innerHTML = `<h3 class="mb-3">${title}</h3><p>${desc}</p>`;
+
+    // Add image handling logic
+    const resultImgElement = document.getElementById('result-img');
+    // The image mapping for this quiz is based on score percentage ranges, not direct MBTI-like keys.
+    // Mapping percentages to filenames:
+    let imageFileName = '';
+    if (percentage <= 20) {
+        imageFileName = 'result_mz_hipster.png';
+    } else if (percentage <= 50) {
+        imageFileName = 'result_kkondae_beginner.png';
+    } else if (percentage <= 80) {
+        imageFileName = 'result_kkondae_mid.png';
+    } else {
+        imageFileName = 'result_kkondae_king.png';
+    }
+
+    if (resultImgElement && imageFileName) {
+        resultImgElement.src = `assets/results/${imageFileName}`;
+        resultImgElement.alt = `${nameInput.value}님의 꼰대력 결과 이미지`;
+        resultImgElement.style.display = 'block';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none'; // Hide if no image is available
+    }
 }
+
+const results = {
+    ESTJ: { title: "꼰대력 100%: 전설의 꼰대 왕", desc: "당신이 나타나면 주변이 조용해집니다. 조금만 마음을 열고 상대방의 이야기를 들어보는 건 어떨까요?", image: 'result_kkondae_king.png' },
+    ESFJ: { title: "꼰대력 75%: 명예 퇴직 위기 꼰대", desc: '"라떼는 말이야~"를 입에 달고 사는 당신! 하지만 그만큼 풍부한 경험과 책임감을 가졌군요.', image: 'result_kkondae_mid.png' },
+    ISTJ: { title: "꼰대력 50%: 새싹 꼰대", desc: "조금씩 '요즘 애들'이라는 말이 입에 붙기 시작했나요? 아직은 소통이 가능한 수준이에요!", image: 'result_kkondae_beginner.png' },
+    ISFJ: { title: "꼰대력 25%: 갓생 사는 MZ 힙스터", desc: "혹시 Z세대? 최신 트렌드를 완벽하게 꿰고 있는 당신! 유연한 사고방식을 가진 멋진 분이시네요.", image: 'result_mz_hipster.png' }
+};

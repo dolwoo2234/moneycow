@@ -1,0 +1,85 @@
+**퀴즈별 전체 필요 이미지 목록**
+
+**1. animal 퀴즈 (`apps/quizzes/animal/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_ESTJ.png` (메인쿤)
+    *   `result_ESFJ.png` (랙돌)
+    *   `result_ISTJ.png` (러시안 블루)
+    *   `result_ISFJ.png` (스코티시 폴드)
+    *   `result_ESTP.png` (아비시니안)
+    *   `result_ESFP.png` (뱅갈)
+    *   `result_ISTP.png` (노르웨이 숲)
+    *   `result_ISFP.png` (페르시안)
+    *   `result_ENTJ.png` (샴)
+    *   `result_ENTP.png` (터키시 앙고라)
+    *   `result_INTJ.png` (스핑크스)
+    *   `result_INTP.png` (터키시 반)
+    *   `result_ENFJ.png` (데본 렉스)
+    *   `result_ENFP.png` (먼치킨)
+    *   `result_INFJ.png` (버만)
+    *   `result_INFP.png` (코리안 숏헤어)
+
+**2. bread 퀴즈 (`apps/quizzes/bread/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_shokupang.png`, `result_croissant.png`, `result_sourdough.png`, `result_salt_bread.png`, `result_bagel.png`, `result_donut.png`, `result_baguette.png`, `result_morning_bread.png`, `result_mammoth_bread.png`, `result_popcorn.png`, `result_millefeuille.png`, `result_twisted_doughnut.png`, `result_castella.png`, `result_lemon_madeleine.png`, `result_ang_butter.png`, `result_cloud_bread.png`
+
+**3. cat 퀴즈 (`apps/quizzes/cat/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_mainecoon.png`, `result_ragdoll.png`, `result_russian_blue.png`, `result_scottish_fold.png`, `result_abyssinian.png`, `result_bengal.png`, `result_norwegian_forest.png`, `result_persian.png`, `result_siamese.png`, `result_turkish_angora.png`, `result_sphynx.png`, `result_turkish_van.png`, `result_devon_rex.png`, `result_munchkin.png`, `result_birman.png`, `result_korean_shorthair.png`
+
+**4. date-style 퀴즈 (`apps/quizzes/date-style/`)**
+*   파일 경로: `assets/results/`
+*   목록 (4개):
+    *   `result_explorer.png` (활동적인 탐험가)
+    *   `result_healer.png` (완벽주의 힐링)
+    *   `result_passionate.png` (즉흥적인 열정)
+    *   `result_homebody.png` (아늑한 집콕)
+
+**5. dessert 퀴즈 (`apps/quizzes/dessert/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_chococake.png`, `result_fruittart.png`, `result_macaron.png`, `result_parfait.png`, `result_applepie.png`, `result_scone.png`, `result_pudding.png`, `result_moosecake.png`, `result_cremebrulee.png`, `result_souffle.png`, `result_truffle.png`, `result_cannele.png`, `result_brownie.png`, `result_lemontart.png`, `result_redvelvet.png`, `result_cottonCandy.png`
+
+**6. drink 퀴즈 (`apps/quizzes/drink/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_americano.png`, `result_grapeade.png`, `result_vanillalatte.png`, `result_parfait.png`, `result_hottea.png`, `result_coldbrew.png`, `result_milktea.png`, `result_greentealatte.png`, `result_energydrink.png`, `result_mintchocofrappe.png`, `result_dutchcoffee.png`, `result_einspanner.png`, `result_lemontae.png`, `result_passionfruitjuice.png`, `result_taromilktea.png`, `result_cloudsmoothie.png`
+
+**7. flower 퀴즈 (`apps/quizzes/flower/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_sunflower.png`, `result_poppy.png`, `result_hydrangea.png`, `result_gerbera.png`, `result_lily.png`, `result_lavender.png`, `result_baby_breath.png`, `result_freesia.png`, `result_rose.png`, `result_tulip.png`, `result_orchid.png`, `result_korean_chrysanthemum.png`, `result_sunflower_nebula.png`, `result_sweet_pea.png`, `result_lotus.png`, `result_forget_me_not.png`
+
+**8. kkondae 퀴즈 (`apps/quizzes/kkondae/`)**
+*   파일 경로: `assets/results/`
+*   목록 (4개):
+    *   `result_kkondae_king.png` (전설의 꼰대 왕)
+    *   `result_kkondae_mid.png` (명예 퇴직 위기 꼰대)
+    *   `result_kkondae_beginner.png` (새싹 꼰대)
+    *   `result_mz_hipster.png` (갓생 사는 MZ 힙스터)
+
+**9. love-language 퀴즈 (`apps/quizzes/love-language/`)**
+*   파일 경로: `assets/results/`
+*   목록 (5개):
+    *   `result_affirmation.png` (인정하는 말)
+    *   `result_qualitytime.png` (함께하는 시간)
+    *   `result_gifts.png` (선물)
+    *   `result_service.png` (봉사)
+    *   `result_touch.png` (스킨십)
+
+**10. space 퀴즈 (`apps/quizzes/space/`)**
+*   파일 경로: `assets/results/`
+*   목록 (16개):
+    *   `result_saturn.png`, `result_mars.png`, `result_earth.png`, `result_sun.png`, `result_mercury.png`, `result_pluto.png`, `result_moon.png`, `result_venus.png`, `result_jupiter.png`, `result_uranus.png`, `result_neptune.png`, `result_comet.png`, `result_nebula.png`, `result_andromeda.png`, `result_milkyway.png`, `result_asteroid.png`
+
+**11. test-addict 퀴즈 (`apps/quizzes/test-addict/`)**
+*   파일 경로: `assets/results/`
+*   목록 (5개):
+    *   `result_level_5.png` (프로 테스트러)
+    *   `result_level_4.png` (심테 마니아)
+    *   `result_level_3.png` (중급 테스트러)
+    *   `result_level_2.png` (테스트 입문자)
+    *   `result_level_1.png` (테스트 비기너`

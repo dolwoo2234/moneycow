@@ -60,14 +60,24 @@ function showResult() {
     const topType = sorted[0][0];
     
     const resultsData = {
-        A: { title: '인정하는 말 (Words of Affirmation)', desc: '당신은 연인의 따뜻한 칭찬과 격려의 한마디에 큰 사랑을 느껴요. "사랑해", "고마워", "네가 최고야"라는 말이 당신의 에너지원입니다!' },
-        B: { title: '함께하는 시간 (Quality Time)', desc: '당신은 온전히 서로에게만 집중하는 시간을 가장 중요하게 생각해요. 휴대폰은 잠시 내려두고 눈을 맞추며 나누는 대화가 당신에게 최고의 사랑 표현입니다.' },
-        C: { title: '선물 (Receiving Gifts)', desc: '당신은 선물을 받을 때 그 속에 담긴 연인의 정성과 마음을 느껴요. 꼭 비싼 것이 아니더라도 나를 생각하며 고른 작은 선물이 당신을 행복하게 합니다.' },
-        D: { title: '봉사 (Acts of Service)', desc: '당신은 연인이 나를 위해 행동으로 보여주는 배려에 감동해요. 집안일을 도와주거나 어려운 일을 대신 해결해주는 모습에서 깊은 사랑을 확인합니다.' },
-        E: { title: '스킨십 (Physical Touch)', desc: '당신은 신체적인 접촉을 통해 정서적인 안정과 사랑을 느껴요. 따뜻한 포옹, 손잡기, 가벼운 입맞춤이 당신에게는 무엇보다 강력한 사랑의 증거입니다.' }
+        A: { title: '인정하는 말 (Words of Affirmation)', desc: '당신은 연인의 따뜻한 칭찬과 격려의 한마디에 큰 사랑을 느껴요. "사랑해", "고마워", "네가 최고야"라는 말이 당신의 에너지원입니다!', image: 'result_affirmation.png' },
+        B: { title: '함께하는 시간 (Quality Time)', desc: '당신은 온전히 서로에게만 집중하는 시간을 가장 중요하게 생각해요. 휴대폰은 잠시 내려두고 눈을 맞추며 나누는 대화가 당신에게 최고의 사랑 표현입니다.', image: 'result_qualitytime.png' },
+        C: { title: '선물 (Receiving Gifts)', desc: '당신은 선물을 받을 때 그 속에 담긴 연인의 정성과 마음을 느껴요. 꼭 비싼 것이 아니더라도 나를 생각하며 고른 작은 선물이 당신을 행복하게 합니다.', image: 'result_gifts.png' },
+        D: { title: '봉사 (Acts of Service)', desc: '당신은 연인이 나를 위해 행동으로 보여주는 배려에 감동해요. 집안일을 도와주거나 어려운 일을 대신 해결해주는 모습에서 깊은 사랑을 확인합니다.', image: 'result_service.png' },
+        E: { title: '스킨십 (Physical Touch)', desc: '당신은 신체적인 접촉을 통해 정서적인 안정과 사랑을 느껴요. 따뜻한 포옹, 손잡기, 가벼운 입맞춤이 당신에게는 무엇보다 강력한 사랑의 증거입니다.', image: 'result_touch.png' }
     };
 
     const result = resultsData[topType];
     resultTitle.textContent = `${nameInput.value}님의 사랑의 언어`;
     resultDesc.innerHTML = `<h3 class="mb-3 text-danger">${result.title}</h3><p class="fs-5">${result.desc}</p>`;
+
+    // Add image handling logic
+    const resultImgElement = document.getElementById('result-img');
+    if (resultImgElement && result.image) {
+        resultImgElement.src = `assets/results/${result.image}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none';
+    }
 }
