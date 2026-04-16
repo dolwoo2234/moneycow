@@ -24,6 +24,7 @@ const questions = [
     { question: '잠자기 전 나의 행동은?', choices: ['집사가 눕는 시간에 맞춰 옆자리에서 대기한다.', '집안 구석구석을 순찰하다가 졸릴 때 아무 데서나 잔다.'], type: 'JP' }
 ];
 
+const results = {
     ESTJ: { title: "카리스마 대장 고양이 '메인쿤'", desc: '듬직하고 리더십 넘치는 당신! 집안의 질서를 지키는 멋진 대장님이에요.', image: 'result_mainecoon.png' },
     ESFJ: { title: "상냥한 개냥이 '랙돌'", desc: '사람을 너무 좋아하는 당신! 누구에게나 사랑받는 친절한 고양이에요.', image: 'result_ragdoll.png' },
     ISTJ: { title: "점잖은 신사 '러시안 블루'", desc: '신중하고 조용한 당신! 정해진 규칙을 좋아하는 깔끔한 성격이에요.', image: 'result_russian_blue.png' },
@@ -40,7 +41,7 @@ const questions = [
     ENFP: { title: "모험가 '먼치킨'", desc: '새로운 도전이 즐거운 당신! 작지만 강한 호기심으로 매일 꿈을 꾸는 고양이에요.', image: 'result_munchkin.png' },
     INFJ: { title: "신비로운 '버만'", desc: '조용하고 속이 깊은 당신! 집사의 마음을 꿰뚫어 보는 신비한 능력이 있어요.', image: 'result_birman.png' },
     INFP: { title: "몽글몽글 '코리안 숏헤어'", desc: '섬세하고 감수성 풍부한 당신! 마음을 연 상대에게는 한없이 다정한 고양이에요.', image: 'result_korean_shorthair.png' }
-
+};
 
 let currentQuestion = 0;
 let userAnswers = '';
@@ -78,7 +79,6 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
-
     // Add image handling logic
     const resultImgElement = document.getElementById('result-img');
     if (resultImgElement && result.image) {
@@ -89,4 +89,3 @@ function showResult() {
         resultImgElement.style.display = 'none'; // Hide if no image is available
     }
 }
-// Modified file for image handling

@@ -25,6 +25,7 @@ const questions = [
     { question: '포장지가 바뀌게 되었다!', choices: ['미리 공지된 대로 새 옷으로 갈아입어야지.', '오! 갑자기 분위기 전환? 나쁘지 않은데?'], type: 'JP' }
 ];
 
+const results = {
     ESTJ: { title: '따끈따끈 식빵', desc: '당신은 누구에게나 사랑받는 따뜻하고 부드러운 마음의 소유자군요!', image: 'result_shokupang.png' },
     ESFJ: { title: '겉바속촉 크루아상', desc: '겉으로는 바삭해 보이지만 속은 누구보다 부드러운, 반전 매력의 당신!', image: 'result_croissant.png' },
     ISTJ: { title: '새콤달콤 사워도우', desc: '독특한 매력으로 주변 사람들을 사로잡는, 개성 만점 예술가 타입!', image: 'result_sourdough.png' },
@@ -41,7 +42,7 @@ const questions = [
     ENFP: { title: '상큼한 레몬 마들렌', desc: '상큼하고 발랄한 매력의 당신! 주변에 긍정적인 기운을 불어넣는군요.', image: 'result_lemon_madeleine.png' },
     INFJ: { title: '속 깊은 앙버터', desc: '겉으로는 차가워 보이지만 속은 따뜻하고 달콤한 당신! 속 깊은 생각으로 사람들에게 감동을 주는군요.', image: 'result_ang_butter.png' },
     INFP: { title: '몽글몽글 구름빵', desc: '몽글몽글한 상상 속을 헤엄치는 당신! 섬세한 감성의 소유자군요.', image: 'result_cloud_bread.png' }
-
+};
 
 let currentQuestion = 0;
 let userAnswers = '';
@@ -106,4 +107,3 @@ function showResult() {
         resultImgElement.style.display = 'none'; // Hide if no image is available
     }
 }
-// Modified file for image handling
