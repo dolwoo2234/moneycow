@@ -25,22 +25,22 @@ const questions = [
 ];
 
 const results = {
-    ESTJ: { title: '질서의 수호자 '토성'', desc: '강력한 고리처럼 원칙과 질서를 중요하게 여기는 당신! 리더십이 뛰어나요.' },
-    ESTP: { title: '열정의 모험가 '화성'', desc: '불타는 에너지와 추진력! 당신은 어떤 장애물도 두려워하지 않는 용감한 개척자예요.' },
-    ESFJ: { title: '다정한 중력 '지구'', desc: '모두를 끌어당기는 따뜻한 매력! 당신은 주변 사람들을 행복하게 만드는 능력이 있어요.' },
-    ESFP: { title: '빛나는 주인공 '태양'', desc: '우주의 중심에서 빛나는 당신! 당신의 밝은 에너지는 모두에게 활력을 줘요.' },
-    ISTJ: { title: '성실한 관찰자 '수성'', desc: '조용히 태양 주위를 도는 수성처럼 성실한 당신! 꼼꼼하고 신뢰할 수 있는 사람이에요.' },
-    ISTP: { title: '독립적인 탐험가 '명왕성'', desc: '멀리 떨어져 있어도 자신만의 길을 가는 당신! 냉철한 판단력과 독립심을 가졌어요.' },
-    ISFJ: { title: '은은한 수호자 '달'', desc: '밤하늘을 비추는 달처럼 다정한 당신! 묵묵히 주변을 챙기는 따뜻한 성격이에요.' },
-    ISFP: { title: '아름다운 예술가 '금성'', desc: '사랑과 아름다움의 행성! 당신은 섬세한 감각과 평화로운 마음을 가진 예술가예요.' },
-    ENTJ: { title: '거대한 지휘관 '목성'', desc: '우주에서 가장 큰 행성처럼 거대한 야망! 당신은 목표를 향해 나아가는 타고난 지휘관이에요.' },
-    ENTP: { title: '번뜩이는 천재 '천왕성'', desc: '옆으로 누워 도는 독특함! 당신은 고정관념을 깨는 기발한 아이디어 뱅크예요.' },
-    INTJ: { title: '신비로운 전략가 '해왕성'', desc: '푸른 신비로움과 깊은 통찰력! 당신은 미래를 내다보는 전략적인 사고를 가졌어요.' },
-    INTP: { title: '사색하는 혜성', desc: '어디로 튈지 모르는 지적 호기심! 당신은 논리적이고 탐구심이 강한 사색가예요.' },
-    ENFJ: { title: '희망의 성운', desc: '별들이 태어나는 곳처럼 희망을 주는 당신! 사람들의 잠재력을 끌어올리는 따뜻한 멘토예요.' },
-    ENFP: { title: '통통 튀는 안드로메다', desc: '무한한 상상력과 가능성! 당신은 언제나 새로운 꿈을 찾아 떠나는 자유로운 영혼이에요.' },
-    INFJ: { title: '깊은 통찰의 은하수', desc: '수많은 별의 조화처럼 깊은 내면! 당신은 타인의 마음을 어루만지는 통찰력을 가졌어요.' },
-    INFP: { title: '몽환적인 소행성', desc: '작지만 빛나는 자신만의 세계! 당신은 순수한 감수성과 꿈을 간직한 이상가예요.' }
+    ESTJ: { title: "질서의 수호자 '토성'", desc: '강력한 고리처럼 원칙과 질서를 중요하게 여기는 당신! 리더십이 뛰어나요.', image: 'result_saturn.png' },
+    ESTP: { title: '열정의 모험가 \'화성\'', desc: '불타는 에너지와 추진력! 당신은 어떤 장애물도 두려워하지 않는 용감한 개척자예요.', image: 'result_mars.png' },
+    ESFJ: { title: '다정한 중력 \'지구\'', desc: '모두를 끌어당기는 따뜻한 매력! 당신은 주변 사람들을 행복하게 만드는 능력이 있어요.', image: 'result_earth.png' },
+    ESFP: { title: '빛나는 주인공 \'태양\'', desc: '우주의 중심에서 빛나는 당신! 당신의 밝은 에너지는 모두에게 활력을 줘요.', image: 'result_sun.png' },
+    ISTJ: { title: '성실한 관찰자 \'수성\'', desc: '조용히 태양 주위를 도는 수성처럼 성실한 당신! 꼼꼼하고 신뢰할 수 있는 사람이에요.', image: 'result_mercury.png' },
+    ISTP: { title: '독립적인 탐험가 \'명왕성\'', desc: '멀리 떨어져 있어도 자신만의 길을 가는 당신! 냉철한 판단력과 독립심을 가졌어요.', image: 'result_pluto.png' },
+    ISFJ: { title: '은은한 수호자 \'달\'', desc: '밤하늘을 비추는 달처럼 다정한 당신! 묵묵히 주변을 챙기는 따뜻한 성격이에요.', image: 'result_moon.png' },
+    ISFP: { title: '아름다운 예술가 \'금성\'', desc: '사랑과 아름다움의 행성! 당신은 섬세한 감각과 평화로운 마음을 가진 예술가예요.', image: 'result_venus.png' },
+    ENTJ: { title: '거대한 지휘관 \'목성\'', desc: '우주에서 가장 큰 행성처럼 거대한 야망! 당신은 목표를 향해 나아가는 타고난 지휘관이에요.', image: 'result_jupiter.png' },
+    ENTP: { title: '번뜩이는 천재 \'천왕성\'', desc: '옆으로 누워 도는 독특함! 당신은 고정관념을 깨는 기발한 아이디어 뱅크예요.', image: 'result_uranus.png' },
+    INTJ: { title: '신비로운 전략가 \'해왕성\'', desc: '푸른 신비로움과 깊은 통찰력! 당신은 미래를 내다보는 전략적인 사고를 가졌어요.', image: 'result_neptune.png' },
+    INTP: { title: '사색하는 혜성', desc: '어디로 튈지 모르는 지적 호기심! 당신은 논리적이고 탐구심이 강한 사색가예요.', image: 'result_comet.png' },
+    ENFJ: { title: '희망의 성운', desc: '별들이 태어나는 곳처럼 희망을 주는 당신! 사람들의 잠재력을 끌어올리는 따뜻한 멘토예요.', image: 'result_nebula.png' },
+    ENFP: { title: '통통 튀는 안드로메다', desc: '무한한 상상력과 가능성! 당신은 언제나 새로운 꿈을 찾아 떠나는 자유로운 영혼이에요.', image: 'result_andromeda.png' },
+    INFJ: { title: '깊은 통찰의 은하수', desc: '수많은 별의 조화처럼 깊은 내면! 당신은 타인의 마음을 어루만지는 통찰력을 가졌어요.', image: 'result_milkyway.png' },
+    INFP: { title: '몽환적인 소행성', desc: '작지만 빛나는 자신만의 세계! 당신은 순수한 감수성과 꿈을 간직한 이상가예요.', image: 'result_asteroid.png' }
 };
 
 let currentQuestion = 0;
@@ -79,4 +79,16 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
+    
+    const resultImgElement = document.getElementById('result-img');
+    const noImageText = document.getElementById('no-image-text');
+    if (resultImgElement && result.image) {
+        resultImgElement.src = `assets/results/${result.image}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+        if (noImageText) noImageText.style.display = 'none';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none';
+        if (noImageText) noImageText.style.display = 'block';
+    }
 }

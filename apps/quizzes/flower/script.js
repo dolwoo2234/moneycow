@@ -25,22 +25,22 @@ const questions = [
 ];
 
 const results = {
-    ESTJ: { title: '강인한 생명력 '해바라기'', desc: '확고한 목표 의식과 리더십! 당신은 언제나 태양을 향해 당당하게 서 있는 든든한 존재예요.' },
-    ESTP: { title: '자유로운 영혼 '개양귀비'', desc: '어디서나 잘 적응하는 강한 생활력! 당신은 화려한 매력과 도전 정신을 가진 모험가예요.' },
-    ESFJ: { title: '따뜻한 사랑 '수국'', desc: '조화롭고 다정한 성격! 당신은 주변 사람들을 하나로 묶어주는 포근한 배려의 소유자예요.' },
-    ESFP: { title: '화려한 주인공 '거베라'', desc: '밝고 긍정적인 에너지! 당신은 존재만으로도 주변을 환하게 밝히는 분위기 메이커예요.' },
-    ISTJ: { title: '한결같은 신뢰 '백합'', desc: '순수하고 성실한 마음! 당신은 맡은 바 책임을 다하는 신뢰할 수 있는 단단한 사람이에요.' },
-    ISTP: { title: '쿨한 매력 '라벤더'', desc: '차분하고 독립적인 성향! 당신은 실용적이고 냉철한 판단력을 가진 매력적인 사람이에요.' },
-    ISFJ: { title: '은은한 배려 '안개꽃'', desc: '묵묵히 남을 돕는 헌신적인 성격! 당신은 화려하진 않지만 없어서는 안 될 소중한 수호자예요.' },
-    ISFP: { title: '섬세한 예술가 '프리지아'', desc: '순진함과 감수성! 당신은 자신만의 고유한 향기를 지닌 평화주의자 예술가예요.' },
-    ENTJ: { title: '카리스마 리더 '장미'', desc: '열정적이고 확신에 찬 결단력! 당신은 목표를 향해 당당하게 나아가는 타고난 리더예요.' },
-    ENTP: { title: '독특한 천재 '튤립'', desc: '기발한 생각과 창의성! 당신은 고정관념을 거부하고 늘 새로운 것을 추구하는 혁신가예요.' },
-    INTJ: { title: '고고한 통찰력 '난초'', desc: '독립적이고 지적인 분위기! 당신은 미래를 내다보는 예리한 통찰력과 전략적인 사고를 가졌어요.' },
-    INTP: { title: '사색하는 구절초', desc: '논리적이고 호기심 많은 성격! 당신은 조용히 자신만의 지적 세계를 탐험하는 지식인이에요.' },
-    ENFJ: { title: '희망의 멘토 '해바라기 성운'', desc: '진심으로 타인을 위하는 따뜻한 마음! 당신은 사람들의 잠재력을 꽃피우는 멋진 조력자예요.' },
-    ENFP: { title: '톡톡 튀는 '스위트피'', desc: '상상력 풍부하고 자유로운 영혼! 당신은 매일매일 새로운 즐거움을 찾아 떠나는 여행자예요.' },
-    INFJ: { title: '신비로운 '연꽃'', desc: '깊은 내면과 통찰력! 당신은 타인의 아픔을 어루만지고 세상을 정화하는 신비한 능력이 있어요.' },
-    INFP: { title: '꿈꾸는 '물망초'', desc: '순수한 감수성과 이상향! 당신은 자신만의 소중한 기억과 꿈을 간직한 낭만주의자예요.' }
+    ESTJ: { title: '강인한 생명력 \'해바라기\'', desc: '확고한 목표 의식과 리더십! 당신은 언제나 태양을 향해 당당하게 서 있는 든든한 존재예요.', image: 'result_sunflower.png' },
+    ESTP: { title: '자유로운 영혼 \'개양귀비\'', desc: '어디서나 잘 적응하는 강한 생활력! 당신은 화려한 매력과 도전 정신을 가진 모험가예요.', image: 'result_poppy.png' },
+    ESFJ: { title: '따뜻한 사랑 \'수국\'', desc: '조화롭고 다정한 성격! 당신은 주변 사람들을 하나로 묶어주는 포근한 배려의 소유자예요.', image: 'result_hydrangea.png' },
+    ESFP: { title: '화려한 주인공 \'거베라\'', desc: '밝고 긍정적인 에너지! 당신은 존재만으로도 주변을 환하게 밝히는 분위기 메이커예요.', image: 'result_gerbera.png' },
+    ISTJ: { title: '한결같은 신뢰 \'백합\'', desc: '순수하고 성실한 마음! 당신은 맡은 바 책임을 다하는 신뢰할 수 있는 단단한 사람이에요.', image: 'result_lily.png' },
+    ISTP: { title: '쿨한 매력 \'라벤더\'', desc: '차분하고 독립적인 성향! 당신은 실용적이고 냉철한 판단력을 가진 매력적인 사람이에요.', image: 'result_lavender.png' },
+    ISFJ: { title: '은은한 배려 \'안개꽃\'', desc: '묵묵히 남을 돕는 헌신적인 성격! 당신은 화려하진 않지만 없어서는 안 될 소중한 수호자예요.', image: 'result_baby_breath.png' },
+    ISFP: { title: '섬세한 예술가 \'프리지아\'', desc: '순진함과 감수성! 당신은 자신만의 고유한 향기를 지닌 평화주의자 예술가예요.', image: 'result_freesia.png' },
+    ENTJ: { title: '카리스마 리더 \'장미\'', desc: '열정적이고 확신에 찬 결단력! 당신은 목표를 향해 당당하게 나아가는 타고난 리더예요.', image: 'result_rose.png' },
+    ENTP: { title: '독특한 천재 \'튤립\'', desc: '기발한 생각과 창의성! 당신은 고정관념을 거부하고 늘 새로운 것을 추구하는 혁신가예요.', image: 'result_tulip.png' },
+    INTJ: { title: '고고한 통찰력 \'난초\'', desc: '독립적이고 지적인 분위기! 당신은 미래를 내다보는 예리한 통찰력과 전략적인 사고를 가졌어요.', image: 'result_orchid.png' },
+    INTP: { title: '사색하는 구절초', desc: '논리적이고 호기심 많은 성격! 당신은 조용히 자신만의 지적 세계를 탐험하는 지식인이에요.', image: 'result_korean_chrysanthemum.png' },
+    ENFJ: { title: '희망의 멘토 \'해바라기 성운\'', desc: '진심으로 타인을 위하는 따뜻한 마음! 당신은 사람들의 잠재력을 꽃피우는 멋진 조력자예요.', image: 'result_sunflower_nebula.png' },
+    ENFP: { title: '톡톡 튀는 \'스위트피\'', desc: '상상력 풍부하고 자유로운 영혼! 당신은 매일매일 새로운 즐거움을 찾아 떠나는 여행자예요.', image: 'result_sweet_pea.png' },
+    INFJ: { title: '신비로운 \'연꽃\'', desc: '깊은 내면과 통찰력! 당신은 타인의 아픔을 어루만지고 세상을 정화하는 신비한 능력이 있어요.', image: 'result_lotus.png' },
+    INFP: { title: '꿈꾸는 \'물망초\'', desc: '순수한 감수성과 이상향! 당신은 자신만의 소중한 기억과 꿈을 간직한 낭만주의자예요.', image: 'result_forget_me_not.png' }
 };
 
 let currentQuestion = 0;
@@ -79,4 +79,16 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
+    
+    const resultImgElement = document.getElementById('result-img');
+    const noImageText = document.getElementById('no-image-text');
+    if (resultImgElement && result.image) {
+        resultImgElement.src = `assets/results/${result.image}`;
+        resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
+        resultImgElement.style.display = 'block';
+        if (noImageText) noImageText.style.display = 'none';
+    } else if (resultImgElement) {
+        resultImgElement.style.display = 'none';
+        if (noImageText) noImageText.style.display = 'block';
+    }
 }

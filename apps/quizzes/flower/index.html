@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>꽃 MBTI</title>
+    <title>꽃 MBTI 테스트</title>
     <link rel="stylesheet" href="../bread/style.css">
     <style>
-        .back-btn { position: absolute; top: 20px; left: 20px; padding: 10px 20px; background-color: #e83e8c; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .progress { background-color: #e83e8c; }
-        #start-page button { background-color: #e83e8c; }
+        .back-btn { position: absolute; top: 20px; left: 20px; padding: 10px 20px; background-color: #f83c3c; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .progress { background-color: #f83c3c; }
+        #start-page button { background-color: #f83c3c; }
     </style>
 </head>
 <body>
     <a href="../../index.html" class="back-btn">← 홈으로</a>
     <div class="container">
         <div id="start-page">
-            <h1>피어나는 나의 매력, 꽃 MBTI</h1>
+            <h1>나는 어떤 꽃일까?</h1>
             <input type="text" id="name" placeholder="이름을 입력해주세요">
             <button id="start-btn">시작하기</button>
         </div>
@@ -27,6 +27,8 @@
         <div id="result-page" class="hidden">
             <h2 id="result-title"></h2>
             <p id="result-desc"></p>
+            <img id="result-img" src="#" alt="결과 이미지" style="display:none; max-width: 100%; margin: 20px auto;">
+            <div id="no-image-text" style="display:none; color: #888; margin-top: 10px;">이미지 준비 중입니다.</div>
         </div>
     </div>
     <script src="script.js"></script>

@@ -78,15 +78,17 @@ function showResult() {
     const result = results[mbti];
     resultTitle.textContent = `${nameInput.value}님은 ${result.title}`;
     resultDesc.textContent = result.desc;
-
     // Add image handling logic
     const resultImgElement = document.getElementById('result-img');
+    const noImageText = document.getElementById('no-image-text');
     if (resultImgElement && result.image) {
         resultImgElement.src = `assets/results/${result.image}`;
         resultImgElement.alt = `${nameInput.value}님의 결과 이미지`;
         resultImgElement.style.display = 'block';
+        if (noImageText) noImageText.style.display = 'none';
     } else if (resultImgElement) {
-        resultImgElement.style.display = 'none'; // Hide if no image is available
+        resultImgElement.style.display = 'none';
+        if (noImageText) noImageText.style.display = 'block';
     }
 }
 // Modified file for image handling
