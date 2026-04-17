@@ -124,13 +124,15 @@
         const hash = hashCode(name + today);
         const random = pseudoRandom(hash);
 
-        // 평균 80점대를 위한 가중치 적용
+        // 평균 80점대를 위한 가중치 적용 (0~100점 분포 유지)
         const r = random();
         let score;
-        if (r < 0.2) {
-            score = Math.floor(r * 200) + 40; // 낮은 확률로 40~80점
+        if (r < 0.1) {
+            score = Math.floor(r * 200); // 10% 확률로 낮은 점수 등장 (0~20점)
+        } else if (r < 0.2) {
+            score = Math.floor(r * 100) + 20; // 10% 확률로 20~40점
         } else {
-            score = Math.floor((r - 0.2) / 0.8 * 30) + 70; // 높은 확률로 70~100점
+            score = Math.floor((r - 0.2) / 0.8 * 30) + 70; // 80% 확률로 70~100점
         }
         score = Math.min(100, score);
         
