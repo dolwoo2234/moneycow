@@ -121,10 +121,12 @@
         if (!name) return;
 
         const today = new Date().toISOString().split('T')[0];
-        const hash = hashCode(name + today);
+        const hour = new Date().getHours();
+        const hash = hashCode(name + today + hour);
         const random = pseudoRandom(hash);
 
-        const score = Math.floor(random() * 101);
+        // 점수 범위를 40~100점으로 조정하여 낮은 점수가 덜 나오게 함
+        const score = Math.floor(random() * 61) + 40;
         
         let category;
         if (score >= 90) category = 90;
